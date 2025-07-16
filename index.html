@@ -43,7 +43,6 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#programs" class="nav-link">Programs</a></li>
-                <li><a href="#activities" class="nav-link">Activities</a></li>
                 <li><a href="#admission" class="nav-link">Admission</a></li>
                 <li><a href="#fees" class="nav-link">Fees</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
@@ -63,10 +62,10 @@
             <div class="hero-text">
                 <h1 class="hero-title">Welcome to <span class="highlight">Wonder Kids Zone</span></h1>
                 <p class="hero-subtitle">ENJOY • LEARN • PLAY - Where Every Child's Journey Begins with Wonder</p>
-                
-                <div class="hero-tagline">
-                    <h3 style="color: #6bfff3; margin: 10px 0;">PLAY GROUP to U.K.G</h3>
-                    <!-- <div class="admission-banner">
+                <p class="hero-subtitle">Play Group to U.K.G</p>
+                <!-- <div class="hero-tagline">
+                    <h3 style="color: #6bfff3; margin: 10px 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">PLAY GROUP to U.K.G</h3>
+                    <div class="admission-banner">
                         <div class="banner-content">
                             <span class="admission-text">🎉 ADMISSION OPEN</span>
                             <span class="enroll-text">ENROLL NOW!</span>
@@ -76,15 +75,20 @@
                             <span class="sparkle">⭐</span>
                             <span class="sparkle">✨</span>
                         </div>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
                 
                 <div class="hero-buttons">
                     <a href="#admission" class="btn btn-primary admission-cta">
-                        <span class="btn-text">Enroll Now</span>
+                        <span class="btn-text">🎓 Enroll Now</span>
                         <span class="btn-pulse"></span>
                     </a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                    <a href="#about" class="btn btn-secondary">
+                        <span class="btn-text">📚 Learn More</span>
+                    </a>
+                    <a href="tel:+91xxxxxxxxx" class="btn btn-call">
+                        <span class="btn-text">📞 Call Us</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
@@ -173,6 +177,158 @@
         </div>
     </section>
 
+    <!-- Floating Interactive Admission Button -->
+    <div class="floating-admission-btn" id="floatingAdmissionBtn">
+        <div class="floating-btn-content">
+            <span class="floating-btn-icon">🎓</span>
+            <span class="floating-btn-text">Admissions Open!</span>
+            <span class="floating-btn-pulse"></span>
+        </div>
+    </div>
+
+    <!-- Admission Modal -->
+    <div class="admission-modal" id="admissionModal">
+        <div class="modal-overlay" onclick="closeAdmissionModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🌟 Admissions Open - Choose Your Program</h3>
+                <button class="modal-close" onclick="closeAdmissionModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="admission-categories">
+                    <div class="category-section">
+                        <h4>📚 Academic Programs</h4>
+                        <div class="admission-options">
+                            <div class="admission-option" data-program="playgroup">
+                                <div class="option-icon">👶</div>
+                                <div class="option-content">
+                                    <h5>Play Group</h5>
+                                    <p>18 months - 2.5 years</p>
+                                    <span class="option-fee">₹2,000/month</span>
+                                </div>
+                                <button class="option-btn">Apply Now</button>
+                            </div>
+                            <div class="admission-option" data-program="nursery">
+                                <div class="option-icon">🧒</div>
+                                <div class="option-content">
+                                    <h5>Nursery</h5>
+                                    <p>2.5 - 3.5 years</p>
+                                    <span class="option-fee">₹2,500/month</span>
+                                </div>
+                                <button class="option-btn">Apply Now</button>
+                            </div>
+                            <div class="admission-option" data-program="lkg">
+                                <div class="option-icon">📖</div>
+                                <div class="option-content">
+                                    <h5>L.K.G</h5>
+                                    <p>3.5 - 4.5 years</p>
+                                    <span class="option-fee">₹3,000/month</span>
+                                </div>
+                                <button class="option-btn">Apply Now</button>
+                            </div>
+                            <div class="admission-option" data-program="ukg">
+                                <div class="option-icon">🎓</div>
+                                <div class="option-content">
+                                    <h5>U.K.G</h5>
+                                    <p>4.5 - 6 years</p>
+                                    <span class="option-fee">₹3,500/month</span>
+                                </div>
+                                <button class="option-btn">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-section">
+                        <h4>🎨 Cultural Activities</h4>
+                        <div class="admission-options">
+                            <div class="admission-option" data-program="dance">
+                                <div class="option-icon">💃</div>
+                                <div class="option-content">
+                                    <h5>Dance Classes</h5>
+                                    <p>Classical & Modern Dance</p>
+                                    <span class="option-fee">₹1,000/month</span>
+                                </div>
+                                <button class="option-btn">Enroll Now</button>
+                            </div>
+                            <div class="admission-option" data-program="drawing">
+                                <div class="option-icon">🎨</div>
+                                <div class="option-content">
+                                    <h5>Art & Drawing</h5>
+                                    <p>Creative Art Classes</p>
+                                    <span class="option-fee">₹800/month</span>
+                                </div>
+                                <button class="option-btn">Enroll Now</button>
+                            </div>
+                            <div class="admission-option" data-program="music">
+                                <div class="option-icon">🎵</div>
+                                <div class="option-content">
+                                    <h5>Music Classes</h5>
+                                    <p>Vocal & Instrumental</p>
+                                    <span class="option-fee">₹1,200/month</span>
+                                </div>
+                                <button class="option-btn">Enroll Now</button>
+                            </div>
+                            <div class="admission-option" data-program="drama">
+                                <div class="option-icon">🎭</div>
+                                <div class="option-content">
+                                    <h5>Drama & Theatre</h5>
+                                    <p>Acting & Performance</p>
+                                    <span class="option-fee">₹900/month</span>
+                                </div>
+                                <button class="option-btn">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-section">
+                        <h4>🏃‍♂️ Sports Activities</h4>
+                        <div class="admission-options">
+                            <div class="admission-option" data-program="swimming">
+                                <div class="option-icon">🏊</div>
+                                <div class="option-content">
+                                    <h5>Swimming</h5>
+                                    <p>Learn to swim safely</p>
+                                    <span class="option-fee">₹1,500/month</span>
+                                </div>
+                                <button class="option-btn">Register Now</button>
+                            </div>
+                            <div class="admission-option" data-program="karate">
+                                <div class="option-icon">🥋</div>
+                                <div class="option-content">
+                                    <h5>Karate Classes</h5>
+                                    <p>Self-defense & Discipline</p>
+                                    <span class="option-fee">₹1,000/month</span>
+                                </div>
+                                <button class="option-btn">Register Now</button>
+                            </div>
+                            <div class="admission-option" data-program="football">
+                                <div class="option-icon">⚽</div>
+                                <div class="option-content">
+                                    <h5>Football Training</h5>
+                                    <p>Team sports & fitness</p>
+                                    <span class="option-fee">₹800/month</span>
+                                </div>
+                                <button class="option-btn">Register Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> Call: +91 xxxxx xxxxx</p>
+                        <p><i class="fas fa-envelope"></i> Email: admissions@wonderkidszone.in</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="openGeneralAdmissionForm()">
+                        📝 General Admission Form
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="about section">
         <div class="container">
@@ -185,57 +341,58 @@
                     <h3>Our Mission</h3>
                     <p>At Wonder Kids Zone, we believe in nurturing young minds through our unique ENJOY • LEARN • PLAY approach. We provide quality early childhood education from Play Group to U.K.G that fosters creativity, curiosity, and confidence.</p>
                     
-                    <h3>Special Features</h3>
+                    <h3>Why Choose Wonder Kids Zone?</h3>
+                    <p>Special Features that make us the perfect choice for your child's early education:</p>
                     <div class="features-grid">
                         <div class="feature-item">
                             <i class="fas fa-shield-alt"></i>
                             <h4>Clean / Safe Environment</h4>
-                            <p>Hygienic and secure campus for child safety</p>
+                            <p>Hygienic and secure campus ensuring complete safety and well-being of every child</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-certificate"></i>
                             <h4>Certified Staff</h4>
-                            <p>Qualified and experienced educators</p>
+                            <p>Qualified and experienced educators with proper certifications for best education</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-book"></i>
                             <h4>Education Curriculum</h4>
-                            <p>Structured learning program for all ages</p>
+                            <p>Well-structured and age-appropriate curriculum for comprehensive development</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-users"></i>
                             <h4>Social Learning</h4>
-                            <p>Interactive group activities and teamwork</p>
+                            <p>Interactive group activities promoting teamwork and communication skills</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-gamepad"></i>
                             <h4>Extra Curricular Activities</h4>
-                            <p>Sports, arts, music and creative activities</p>
+                            <p>Wide range of sports, arts, music and creative activities for holistic development</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-dollar-sign"></i>
                             <h4>Affordable Fees</h4>
-                            <p>Quality education at reasonable cost</p>
+                            <p>Quality education at reasonable and competitive fees accessible to all families</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-user"></i>
                             <h4>Individual Learning</h4>
-                            <p>Personalized attention for each child</p>
+                            <p>Personalized attention and customized approaches for each child's unique needs</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-chalkboard-teacher"></i>
                             <h4>Theme Concept Teaching</h4>
-                            <p>Creative and engaging teaching methods</p>
+                            <p>Innovative theme-based teaching methods making learning engaging and memorable</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-laptop"></i>
                             <h4>Modern Teaching Aids</h4>
-                            <p>Latest educational tools and technology</p>
+                            <p>Latest educational technology and modern tools to enhance learning experience</p>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-graduation-cap"></i>
                             <h4>Extra Coaching</h4>
-                            <p>Additional support for academic excellence</p>
+                            <p>Additional academic support to ensure every child achieves their full potential</p>
                         </div>
                     </div>
                 </div>
@@ -255,6 +412,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Programs Section -->
     <section id="programs" class="programs section">
@@ -531,6 +690,10 @@
         </div>
     </section>
 
+
+
+
+
     <!-- Gallery Section -->
     <section id="gallery" class="gallery section">
         <div class="container">
@@ -707,23 +870,27 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#admission">Admission</a></li>
+                        <li><a href="#programs">Our Programs</a></li>
+                        <li><a href="#admission">Admissions</a></li>
                         <li><a href="#fees">Fee Structure</a></li>
+                        <li><a href="#gallery">Photo Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Programs</h4>
+                    <h4>Academic Programs</h4>
                     <ul>
-                        <li><a href="#programs">Play Group</a></li>
-                        <li><a href="#programs">Nursery</a></li>
-                        <li><a href="#programs">L.K.G</a></li>
-                        <li><a href="#programs">U.K.G</a></li>
+                        <li><a href="#programs">Play Group (18m-2.5y)</a></li>
+                        <li><a href="#programs">Nursery (2.5-3.5y)</a></li>
+                        <li><a href="#programs">L.K.G (3.5-4.5y)</a></li>
+                        <li><a href="#programs">U.K.G (4.5-6y)</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
+                    <h4>School Hours</h4>
                     <ul>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                        <li><i class="fas fa-clock"></i> Saturday: 9:00 AM - 1:00 PM</li>
                         <li><i class="fas fa-phone"></i> +91 xxxxx xxxxx</li>
                         <li><i class="fas fa-envelope"></i> info@wonderkidszone.in</li>
                         <li><i class="fas fa-map-marker-alt"></i> Kalinga Nagar, Patrapada, BBSR</li>
@@ -773,3 +940,5 @@
       ]
     }
     </script>
+</body>
+</html>
