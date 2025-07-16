@@ -296,32 +296,45 @@ if ('ontouchstart' in window) {
 // Video overlay functionality
 document.addEventListener('DOMContentLoaded', () => {
     const videoContainer = document.querySelector('.video-container');
+    
+    // Check if video container exists
+    if (!videoContainer) return;
+    
     const video = videoContainer.querySelector('video');
     const overlay = videoContainer.querySelector('.video-overlay');
     
-    overlay.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-            overlay.style.opacity = '0';
-        } else {
-            video.pause();
+    // Only add event listeners if video element exists
+    if (video && overlay) {
+        overlay.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                overlay.style.opacity = '0';
+            } else {
+                video.pause();
+                overlay.style.opacity = '1';
+            }
+        });
+        
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                overlay.style.opacity = '0';
+            } else {
+                video.pause();
+                overlay.style.opacity = '1';
+            }
+        });
+        
+        video.addEventListener('ended', () => {
             overlay.style.opacity = '1';
-        }
-    });
-    
-    video.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-            overlay.style.opacity = '0';
-        } else {
-            video.pause();
-            overlay.style.opacity = '1';
-        }
-    });
-    
-    video.addEventListener('ended', () => {
-        overlay.style.opacity = '1';
-    });
+        });
+    } else if (overlay) {
+        // If there's no video but there's an overlay, make it clickable for placeholder
+        overlay.addEventListener('click', () => {
+            // Show a placeholder message or do nothing
+            console.log('Video placeholder clicked - replace with actual video element');
+        });
+    }
 });
 
 // Hero Carousel JavaScript
