@@ -410,3 +410,117 @@ rippleStyles.textContent = `
     }
 `;
 document.head.appendChild(rippleStyles);
+
+
+
+ // Hero Carousel JavaScript
+let heroCurrentSlide = 0;
+let heroSlides = [];
+let heroDots = [];
+let heroAutoSlideInterval;
+let heroProgressBar;
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initHeroCarousel();
+});
+
+function initHeroCarousel() {
+    heroSlides = document.querySelectorAll('.carousel-slide');
+    heroDots = document.querySelectorAll('.carousel-dots .dot');
+    
+    // Create progress bar
+    heroProgressBar = document.createElement('div');
+    heroProgressBar.className = 'carousel-progress';
+    document.querySelector('.hero-carousel').appendChild(heroProgressBar);
+    
+    // Start auto-scroll
+    startHeroAutoSlide();
+    
+    // Pause on hover
+    const carousel = document.querySelector('.hero-carousel');
+    carousel.addEventListener('mouseenter', stopHeroAutoSlide);
+    carousel.addEventListener('mouseleave', startHeroAutoSlide);
+}
+
+function heroCarouselGoTo(slideIndex) {
+    // Remove active classes
+    heroSlides[heroCurrentSlide].classList.remove('active');
+    heroDots[heroCurrentSlide].classList.remove('active');
+    
+    // Update current slide
+    heroCurrentSlide = slideIndex;
+    
+    // Add active classes
+    heroSlides[heroCurrentSlide].classList.add('active');
+    heroDots[heroCurrentSlide].classList.add('active');
+    
+    // Reset auto-slide timer
+    resetHeroAutoSlide();
+}
+
+function heroCarouselNext() {
+    const nextSlide = (heroCurrentSlide + 1) % heroSlides.length;
+    heroCarouselGoTo(nextSlide);
+}
+
+function heroCarouselPrev() {
+    const prevSlide = (heroCurrentSlide - 1 + heroSlides.length) % heroSlides.length;
+    heroCarouselGoTo(prevSlide);
+}
+
+function startHeroAutoSlide() {
+    let progress = 0;
+    const duration = 4000; // 4 seconds per slide
+    const interval = 50; // Update progress every 50ms
+    
+    heroAutoSlideInterval = setInterval(() => {
+        progress += interval;
+        const progressPercent = (progress / duration) * 100;
+        heroProgressBar.style.width = progressPercent + '%';
+        
+        if (progress >= duration) {
+            heroCarouselNext();
+            progress = 0;
+            heroProgressBar.style.width = '0%';
+        }
+    }, interval);
+}
+
+function stopHeroAutoSlide() {
+    if (heroAutoSlideInterval) {
+        clearInterval(heroAutoSlideInterval);
+        heroProgressBar.style.width = '0%';
+    }
+}
+
+function resetHeroAutoSlide() {
+    stopHeroAutoSlide();
+    setTimeout(startHeroAutoSlide, 100);
+}
+
+// Touch/swipe support for mobile
+let heroTouchStartX = 0;
+let heroTouchEndX = 0;
+
+document.querySelector('.hero-carousel').addEventListener('touchstart', (e) => {
+    heroTouchStartX = e.changedTouches[0].screenX;
+});
+
+document.querySelector('.hero-carousel').addEventListener('touchend', (e) => {
+    heroTouchEndX = e.changedTouches[0].screenX;
+    handleHeroSwipe();
+});
+
+function handleHeroSwipe() {
+    const swipeThreshold = 50;
+    const diff = heroTouchStartX - heroTouchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            heroCarouselNext(); // Swipe left - next slide
+        } else {
+            heroCarouselPrev(); // Swipe right - previous slide
+        }
+    }
+}

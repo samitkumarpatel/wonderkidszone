@@ -64,9 +64,9 @@
                 <h1 class="hero-title">Welcome to <span class="highlight">Wonder Kids Zone</span></h1>
                 <p class="hero-subtitle">ENJOY • LEARN • PLAY - Where Every Child's Journey Begins with Wonder</p>
                 
-                <!-- <div class="hero-tagline">
-                    <h3 style="color: #ff6b6b; margin: 10px 0;">PLAY GROUP TO U.K.G</h3>
-                    <div class="admission-banner">
+                <div class="hero-tagline">
+                    <h3 style="color: #6bfff3; margin: 10px 0;">PLAY GROUP to U.K.G</h3>
+                    <!-- <div class="admission-banner">
                         <div class="banner-content">
                             <span class="admission-text">🎉 ADMISSION OPEN</span>
                             <span class="enroll-text">ENROLL NOW!</span>
@@ -76,8 +76,8 @@
                             <span class="sparkle">⭐</span>
                             <span class="sparkle">✨</span>
                         </div>
-                    </div>
-                </div> -->
+                    </div> -->
+                </div>
                 
                 <div class="hero-buttons">
                     <a href="#admission" class="btn btn-primary admission-cta">
@@ -88,10 +88,67 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="placeholder-image hero-placeholder">
-                    <div>
-                        <i class="fas fa-children" style="font-size: 3rem; margin-bottom: 10px;"></i>
-                        <p>Happy Children Playing<br><small>Replace with hero-kids.jpg</small></p>
+                <div class="hero-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-slide active">
+                            <div class="placeholder-image hero-placeholder">
+                                <div>
+                                    <i class="fas fa-children" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                                    <p>Happy Children Playing<br><small>Replace with hero-kids-1.jpg</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="placeholder-image hero-placeholder">
+                                <div>
+                                    <i class="fas fa-graduation-cap" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                                    <p>Learning Activities<br><small>Replace with hero-learning.jpg</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="placeholder-image hero-placeholder">
+                                <div>
+                                    <i class="fas fa-palette" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                                    <p>Creative Arts<br><small>Replace with hero-arts.jpg</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="placeholder-image hero-placeholder">
+                                <div>
+                                    <i class="fas fa-futbol" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                                    <p>Outdoor Activities<br><small>Replace with hero-sports.jpg</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="placeholder-image hero-placeholder">
+                                <div>
+                                    <i class="fas fa-music" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                                    <p>Music & Dance<br><small>Replace with hero-music.jpg</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev" onclick="heroCarouselPrev()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="heroCarouselNext()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="heroCarouselGoTo(0)"></span>
+                        <span class="dot" onclick="heroCarouselGoTo(1)"></span>
+                        <span class="dot" onclick="heroCarouselGoTo(2)"></span>
+                        <span class="dot" onclick="heroCarouselGoTo(3)"></span>
+                        <span class="dot" onclick="heroCarouselGoTo(4)"></span>
                     </div>
                 </div>
             </div>
@@ -102,7 +159,7 @@
                 <p>Happy Students</p>
             </div>
             <div class="stat-item">
-                <h3>5+</h3>
+                <h3>10+</h3>
                 <p>Years Experience</p>
             </div>
             <div class="stat-item">
@@ -716,5 +773,3 @@
       ]
     }
     </script>
-</body>
-</html>
