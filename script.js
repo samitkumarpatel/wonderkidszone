@@ -548,23 +548,13 @@ if (backToTopButton) {
     });
 }
 
-// Floating Admission Button Functionality
+// Admission Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    initFloatingAdmissionButton();
+    initAdmissionModal();
 });
 
-function initFloatingAdmissionButton() {
-    const floatingBtn = document.getElementById('floatingAdmissionBtn');
+function initAdmissionModal() {
     const modal = document.getElementById('admissionModal');
-    
-    // Show floating button after page loads
-    setTimeout(() => {
-        floatingBtn.style.opacity = '1';
-        floatingBtn.style.transform = 'translateY(-50%) scale(1)';
-    }, 2000);
-    
-    // Handle floating button click
-    floatingBtn.addEventListener('click', openAdmissionModal);
     
     // Handle admission option clicks
     document.querySelectorAll('.admission-option').forEach(option => {
@@ -817,25 +807,6 @@ function trackEvent(eventName, properties = {}) {
     // Example: Facebook Pixel
     // fbq('track', eventName, properties);
 }
-
-// Hide floating button when in admission section
-window.addEventListener('scroll', function() {
-    const floatingBtn = document.getElementById('floatingAdmissionBtn');
-    const admissionSection = document.getElementById('admission');
-    
-    if (admissionSection && floatingBtn) {
-        const admissionRect = admissionSection.getBoundingClientRect();
-        const isInAdmissionSection = admissionRect.top <= window.innerHeight && admissionRect.bottom >= 0;
-        
-        if (isInAdmissionSection) {
-            floatingBtn.style.opacity = '0.3';
-            floatingBtn.style.transform = 'translateY(-50%) scale(0.8)';
-        } else {
-            floatingBtn.style.opacity = '1';
-            floatingBtn.style.transform = 'translateY(-50%) scale(1)';
-        }
-    }
-});
 
 // Enhanced option selection with visual feedback
 function addOptionSelectionEffects() {

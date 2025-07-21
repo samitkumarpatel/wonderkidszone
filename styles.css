@@ -810,92 +810,6 @@ html {
     border-color: #4ecdc4;
 }
 
-/* Fees Section */
-.fees {
-    background: #f8f9fa;
-}
-
-.fees-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.fee-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.fee-card:hover {
-    transform: translateY(-10px);
-}
-
-.fee-card.featured {
-    border: 3px solid #4ecdc4;
-    transform: scale(1.05);
-}
-
-.popular-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.fee-card h3 {
-    color: #2c3e50;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.age-group {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.fee-amount {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #4ecdc4;
-    margin-bottom: 25px;
-}
-
-.fee-amount span {
-    font-size: 1rem;
-    color: #666;
-    font-weight: 400;
-}
-
-.fee-includes {
-    list-style: none;
-    text-align: left;
-}
-
-.fee-includes li {
-    padding: 8px 0;
-    color: #666;
-}
-
-.fee-note {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 /* Gallery Section */
 .gallery-filter {
     text-align: center;
@@ -2020,76 +1934,6 @@ html {
     }
 }
 
-/* Floating Admission Button */
-.floating-admission-btn {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    z-index: 1000;
-    cursor: pointer;
-    animation: floatBounce 3s ease-in-out infinite;
-}
-
-/* Initial state for floating button */
-.floating-admission-btn {
-    opacity: 0;
-    transform: translateY(-50%) scale(0.8);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.floating-btn-content {
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    overflow: hidden;
-    min-width: 180px;
-    transition: all 0.3s ease;
-}
-
-.floating-btn-content:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
-}
-
-.floating-btn-icon {
-    font-size: 1.5rem;
-    animation: pulse 2s infinite;
-}
-
-.floating-btn-text {
-    font-weight: 600;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-.floating-btn-pulse {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: pulseWave 2s infinite;
-}
-
-@keyframes floatBounce {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-50%) translateX(-10px); }
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
 /* Admission Modal */
 .admission-modal {
     position: fixed;
@@ -2341,21 +2185,8 @@ html {
     background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }
 
-/* Mobile specific enhancements */
-@media (max-width: 768px) {
-    .floating-admission-btn {
-        animation: mobileBounce 3s ease-in-out infinite;
-    }
-}
-
-@keyframes mobileBounce {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-10px) scale(1.05); }
-}
-
-/* Print styles - hide floating button when printing */
+/* Print styles - hide admission modal when printing */
 @media print {
-    .floating-admission-btn,
     .admission-modal {
         display: none !important;
     }

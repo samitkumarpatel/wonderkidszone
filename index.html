@@ -44,7 +44,6 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#programs" class="nav-link">Programs</a></li>
                 <li><a href="#admission" class="nav-link">Admission</a></li>
-                <li><a href="#fees" class="nav-link">Fees</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -79,15 +78,12 @@
                 </div> -->
                 
                 <div class="hero-buttons">
-                    <a href="#admission" class="btn btn-primary admission-cta">
-                        <span class="btn-text">🎓 Enroll Now</span>
+                    <button class="btn btn-primary admission-cta" onclick="openAdmissionModal()">
+                        <span class="btn-text">🎓 Admissions Open - Enroll Now</span>
                         <span class="btn-pulse"></span>
-                    </a>
-                    <a href="#about" class="btn btn-secondary">
-                        <span class="btn-text">📚 Learn More</span>
-                    </a>
-                    <a href="tel:+91xxxxxxxxx" class="btn btn-call">
-                        <span class="btn-text">📞 Call Us</span>
+                    </button>
+                    <a href="#contact" class="btn btn-call">
+                        <span class="btn-text">� Contact Us</span>
                     </a>
                 </div>
             </div>
@@ -177,15 +173,6 @@
         </div>
     </section>
 
-    <!-- Floating Interactive Admission Button -->
-    <div class="floating-admission-btn" id="floatingAdmissionBtn">
-        <div class="floating-btn-content">
-            <span class="floating-btn-icon">🎓</span>
-            <span class="floating-btn-text">Admissions Open!</span>
-            <span class="floating-btn-pulse"></span>
-        </div>
-    </div>
-
     <!-- Admission Modal -->
     <div class="admission-modal" id="admissionModal">
         <div class="modal-overlay" onclick="closeAdmissionModal()"></div>
@@ -206,7 +193,7 @@
                                 <div class="option-content">
                                     <h5>Play Group</h5>
                                     <p>18 months - 2.5 years</p>
-                                    <span class="option-fee">₹2,000/month</span>
+                                    <span class="option-fee">₹0,000/month</span>
                                 </div>
                                 <button class="option-btn">Apply Now</button>
                             </div>
@@ -215,7 +202,7 @@
                                 <div class="option-content">
                                     <h5>Nursery</h5>
                                     <p>2.5 - 3.5 years</p>
-                                    <span class="option-fee">₹2,500/month</span>
+                                    <span class="option-fee">₹0,000/month</span>
                                 </div>
                                 <button class="option-btn">Apply Now</button>
                             </div>
@@ -224,7 +211,7 @@
                                 <div class="option-content">
                                     <h5>L.K.G</h5>
                                     <p>3.5 - 4.5 years</p>
-                                    <span class="option-fee">₹3,000/month</span>
+                                    <span class="option-fee">₹0,000/month</span>
                                 </div>
                                 <button class="option-btn">Apply Now</button>
                             </div>
@@ -233,7 +220,7 @@
                                 <div class="option-content">
                                     <h5>U.K.G</h5>
                                     <p>4.5 - 6 years</p>
-                                    <span class="option-fee">₹3,500/month</span>
+                                    <span class="option-fee">₹0,000/month</span>
                                 </div>
                                 <button class="option-btn">Apply Now</button>
                             </div>
@@ -248,7 +235,7 @@
                                 <div class="option-content">
                                     <h5>Dance Classes</h5>
                                     <p>Classical & Modern Dance</p>
-                                    <span class="option-fee">₹1,000/month</span>
+                                    <span class="option-fee">₹0,000/month</span>
                                 </div>
                                 <button class="option-btn">Enroll Now</button>
                             </div>
@@ -257,7 +244,7 @@
                                 <div class="option-content">
                                     <h5>Art & Drawing</h5>
                                     <p>Creative Art Classes</p>
-                                    <span class="option-fee">₹800/month</span>
+                                    <span class="option-fee">₹000/month</span>
                                 </div>
                                 <button class="option-btn">Enroll Now</button>
                             </div>
@@ -266,51 +253,9 @@
                                 <div class="option-content">
                                     <h5>Music Classes</h5>
                                     <p>Vocal & Instrumental</p>
-                                    <span class="option-fee">₹1,200/month</span>
+                                    <span class="option-fee">₹0,200/month</span>
                                 </div>
                                 <button class="option-btn">Enroll Now</button>
-                            </div>
-                            <div class="admission-option" data-program="drama">
-                                <div class="option-icon">🎭</div>
-                                <div class="option-content">
-                                    <h5>Drama & Theatre</h5>
-                                    <p>Acting & Performance</p>
-                                    <span class="option-fee">₹900/month</span>
-                                </div>
-                                <button class="option-btn">Enroll Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="category-section">
-                        <h4>🏃‍♂️ Sports Activities</h4>
-                        <div class="admission-options">
-                            <div class="admission-option" data-program="swimming">
-                                <div class="option-icon">🏊</div>
-                                <div class="option-content">
-                                    <h5>Swimming</h5>
-                                    <p>Learn to swim safely</p>
-                                    <span class="option-fee">₹1,500/month</span>
-                                </div>
-                                <button class="option-btn">Register Now</button>
-                            </div>
-                            <div class="admission-option" data-program="karate">
-                                <div class="option-icon">🥋</div>
-                                <div class="option-content">
-                                    <h5>Karate Classes</h5>
-                                    <p>Self-defense & Discipline</p>
-                                    <span class="option-fee">₹1,000/month</span>
-                                </div>
-                                <button class="option-btn">Register Now</button>
-                            </div>
-                            <div class="admission-option" data-program="football">
-                                <div class="option-icon">⚽</div>
-                                <div class="option-content">
-                                    <h5>Football Training</h5>
-                                    <p>Team sports & fitness</p>
-                                    <span class="option-fee">₹800/month</span>
-                                </div>
-                                <button class="option-btn">Register Now</button>
                             </div>
                         </div>
                     </div>
@@ -633,66 +578,10 @@
                             <textarea placeholder="Message (Optional)"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit Inquiry</button>
-                    </form>
-                </div>
+                    </form>                </div>
             </div>
         </div>
     </section>
-
-    <!-- Fees Section -->
-    <section id="fees" class="fees section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Fee Structure</h2>
-                <p class="section-subtitle">Affordable quality education for every child</p>
-            </div>
-            <div class="fees-grid">
-                <div class="fee-card">
-                    <h3>Toddler Program</h3>
-                    <div class="age-group">18 months - 3 years</div>
-                    <div class="fee-amount">₹8,000<span>/month</span></div>
-                    <ul class="fee-includes">
-                        <li>✓ Morning snacks</li>
-                        <li>✓ Learning materials</li>
-                        <li>✓ Activity kits</li>
-                        <li>✓ Progress reports</li>
-                    </ul>
-                </div>
-                <div class="fee-card featured">
-                    <div class="popular-badge">Most Popular</div>
-                    <h3>Preschool Program</h3>
-                    <div class="age-group">3 - 4 years</div>
-                    <div class="fee-amount">₹10,000<span>/month</span></div>
-                    <ul class="fee-includes">
-                        <li>✓ Meals and snacks</li>
-                        <li>✓ All learning materials</li>
-                        <li>✓ Field trips</li>
-                        <li>✓ Extra-curricular activities</li>
-                        <li>✓ Parent-teacher meetings</li>
-                    </ul>
-                </div>
-                <div class="fee-card">
-                    <h3>Kindergarten Program</h3>
-                    <div class="age-group">4 - 6 years</div>
-                    <div class="fee-amount">₹12,000<span>/month</span></div>
-                    <ul class="fee-includes">
-                        <li>✓ Complete meals</li>
-                        <li>✓ Books and supplies</li>
-                        <li>✓ School readiness program</li>
-                        <li>✓ Special events</li>
-                        <li>✓ Transport facility</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="fee-note">
-                <p><strong>Note:</strong> One-time admission fee of ₹5,000 applicable for all programs. Annual fees can be paid in installments. Sibling discounts available.</p>
-            </div>
-        </div>
-    </section>
-
-
-
-
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery section">
@@ -872,7 +761,6 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#programs">Our Programs</a></li>
                         <li><a href="#admission">Admissions</a></li>
-                        <li><a href="#fees">Fee Structure</a></li>
                         <li><a href="#gallery">Photo Gallery</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
